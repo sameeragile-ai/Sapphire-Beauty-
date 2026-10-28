@@ -1,0 +1,6 @@
+{
+  "name": "Sapphire Beauty Kingschase",
+  "description": "Boutique Brow & Lash Salon in Kings Chase Shopping Centre, Kingswood, Bristol. 15+ years experience in lash lifts, brow lamination, tinting, waxing, and beauty care.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sapphire: #1E2A5A;
+  --color-midnight: #121a3d;
+  --color-rose: #D6336C;
+  --color-gem: #F06A9B;
+  --color-blush: #FCE4EC;
+  --color-pearl: #FFF8FA;
+  --color-gold: #C9A96E;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Base custom styles & reset */
+:root {
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #FFF8FA;
+  color: #1E2A5A;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Editorial Serif Headings */
+h1, h2, h3, .font-editorial {
+  font-family: var(--font-serif);
+}
+
+/* Signature Gradients */
+.bg-sapphire-glow {
+  background: linear-gradient(135deg, #1E2A5A 0%, #6B2E6E 55%, #D6336C 100%);
+}
+
+.bg-rose-blush {
+  background: linear-gradient(135deg, #FCE4EC 0%, #F8C8DC 100%);
+}
+
+.text-gradient-sapphire {
+  background: linear-gradient(135deg, #1E2A5A 0%, #B02A66 50%, #D6336C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-rose {
+  background: linear-gradient(135deg, #D6336C 0%, #F06A9B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #C9A96E 50%, #E6CA85 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Recurring Brand Motif: Rounded Arch Frame */
+.arch-frame {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.arch-frame-soft {
+  border-top-left-radius: 6rem;
+  border-top-right-radius: 6rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Subtle Film Grain Overlay */
+.film-grain {
+  position: relative;
+}
+.film-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  z-index: 1;
+}
+
+/* Shimmer animation for primary CTAs */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.animate-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-20deg);
+  animation: shimmer 3s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF8FA;
+}
+::-webkit-scrollbar-thumb {
+  background: #E8B4C8;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D6336C;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
